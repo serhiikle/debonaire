@@ -1,1 +1,21 @@
 // Заголовки, загальні БЕМ блоки та інше...
+
+// Заклик до дії
+.book {
+  letter-spacing: toRem(-0.4);
+  color: #fff;
+  font-weight: 500;
+  position: relative;
+  line-height: 1.31; // 21/16
+  padding-left: toRem(3);
+  padding-right: toRem(3);
+  &::after {
+    content: "";
+    position: absolute;
+    top: calc(100% + toRem(5.5));
+    left: 0;
+    background-color: #f95454;
+    height: toRem(2);
+    width: 100%;
+  }
+}

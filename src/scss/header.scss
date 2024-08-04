@@ -93,11 +93,19 @@
     font-weight: 500;
     color: #fff;
     line-height: 1.31; // 21/16
+    transition: all .3s;
 
     // media 380px
     @media (max-width: $mobile) {
       color: #000;
       font-size: toRem(32);
+    }
+
+    // media HOVER
+    @media (any-hover: hover) {
+      &:hover {
+        color: $redColor;
+      }
     }
   }
 }

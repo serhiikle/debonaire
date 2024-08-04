@@ -13,7 +13,7 @@
 			top: 0;
 			overflow: auto;
 			//padding: toRem(110) toRem(15) toRem(30) toRem(15);
-			padiing-top: toRem(110);
+			padding-top: toRem(110);
 			padding-bottom: toRem(30);
 			@include adaptiveValue("padding-left", 50 ,15);
 			@include adaptiveValue("padding-right", 50, 15);

@@ -1,36 +1,78 @@
 //====================================================================================================
+.page {
 
+  // .page__hero
+  &__hero {
+
+  }
+}
 //====================================================================================================
+
 .hero {
   padding-top: toRem(65);
+  padding-bottom: toRem(143);
 
   // .hero__body
   &__body {
     max-width: toRem(955);
     margin: 0 auto;
     position: relative;
-    display: grid;
-    align-items: start;
-    grid-template-columns: 41.884817% 31.099476% auto;
+
+    // media min-width: 600px
+    @media (min-width: toEm(600)) {
+      display: grid;
+      align-items: start;
+      grid-template-columns: 41.884817% 31.099476% auto;
+    }
+
+    // media max-width: 599.98
+    @media (max-width: toEm(599.98)) {
+      padding-top: toRem(20);
+      padding-bottom: toRem(40);
+    }
   }
 
   // .hero__title
   &__title {
-    padding-top: toRem(50);
     color: #fff;
     font-family: "Lexend Deca";
-    font-size: toRem(36);
-    line-height: 1.33; // 48/36
+    font-style: normal;
+    line-height: 1.33; /* 48/36 */
     letter-spacing: toRem(-1.5);
-    max-width: toRem(400);
     position: relative;
     z-index: 3;
+    @include adaptiveValue("font-size", 36, 24, 0, 1026, 320);
+
+    // media min-width: 600px
+    @media (min-width: toEm(600)) {
+      max-width: toRem(400);
+      padding-top: 10.893246%; /* 50/459 */
+    }
+
+    // media max-width: 599.98
+    @media (max-width: toEm(599.98)) {
+
+      &:not(:last-child) {
+        margin-bottom: toRem(20);
+      }
+    }
   }
 
   // .hero__media
   &__media {
     position: relative;
-    margin-left: toRem(-115);
+    
+    // media min-width:600px
+    @media (min-width: toEm(600)) {
+      margin-left: toRem(-115);
+    }
+
+    // media max-width: 599.98
+    @media (max-width: toEm(599.98)) {
+      &:not(:last-child) {
+        margin-bottom: toRem(20);
+      }
+    }
   }
 
   // .hero__main-image
@@ -44,6 +86,20 @@
     z-index: 2;
   }
 
+  // .hero__content
+  &__content {
+    // margin-left: toRem(-65);
+    position: relative;
+    padding-top: toRem(8);
+    z-index: 3;
+
+    // media max-width: 599.98
+    @media (max-width: toEm(599.98)) {
+      display: flex;
+      gap: toRem(20);
+    }
+  }
+
   // .hero__circle-image
   &__circle-image {
     aspect-ratio: 1 / 1;
@@ -53,9 +109,20 @@
     object-fit: cover;
     border-radius: 50%;
     overflow: hidden;
-    transform: translate(toRem(-65), 0);
-    &:not(:last-child) {
-      margin-bottom: toRem(30);
+
+    // media min-width:600px
+    @media (min-width: toEm(600)) {
+      transform: translate(toRem(-65), 0);
+
+      &:not(:last-child) {
+        margin-bottom: toRem(30);
+      }
+    }
+
+    // media max-width: 599.98
+    @media (max-width: toEm(599.98)) {
+      flex-shrink: 0;
+      flex-basis: toRem(100);
     }
   }
 
@@ -65,29 +132,43 @@
 
     // .hero__deco--one
     &--one {
-      top: toRem(-76);
-      right: toRem(-110);
+      aspect-ratio: 233 / 195;
+      top: -16.557734%; /* -76/459 */
+      right: -26.699029%; /* -110/412 */
+      max-width: 56.553398%; /* 233/412 */
     }
 
     // .hero__deco--two
     &--two {
-      bottom: toRem(-143);
-      right: toRem(-87);
+      aspect-ratio: 239 / 278;
+      bottom: -31.154684%; /* -143/459 */
+      right: -21.116505%; /* -87/412 */
+      max-width: 58.009709%; /* 239/412 */
     }
   }
 
-  // .hero__content
-  &__content {
-    //margin-left: toRem(-65);
-    position: relative;
-    padding-top: toRem(8);
-    z-index: 3;
+  // .hero__figure
+  &__figure {
+    aspect-ratio: 197 / 197;
+    position: absolute;
+    bottom: -12.418301%; /* 57/459 */
+    left: -21.84466%; /* 90/412 */
+    max-width: 47.815534%; /* 197/412 */
   }
 
   // .hero__text
   &__text {
-    max-width: toRem(231);
-    line-height: 1.5; // 24 / 16
-    padding-left: toRem(36);
+    line-height: 1.5; /* 24/16 */
+    
+    // media min-width:600px
+    @media (min-width: toEm(600)) {
+      padding-left: 15.652174%; /* 36/230 */
+      max-width: toRem(230);
+    }
+  }
+
+  // media max-width: 599.98
+  @media (max-width: toEm(599.98)) {
+    align-self: center;
   }
 }

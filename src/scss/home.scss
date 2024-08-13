@@ -39,8 +39,7 @@
     font-style: normal;
     line-height: 1.33; /* 48/36 */
     letter-spacing: toRem(-1.5);
-    position: relative;
-    z-index: 3;
+    
 
     // animation
     opacity: 0;
@@ -49,8 +48,21 @@
     // .hero__title._watcher-view
     ._watcher-view & {
       transform: translate(0, 0);
-      transition: all 1s .5s;
+      transition: transform 1s .5s, opacity 1s, .5s;
       opacity: 1;
+    }
+
+    // .hero__title-item
+    &-item {
+      position: relative;
+      z-index: 3;
+      // media max-width: 599.98
+      @media (max-width: toEm(599.98)) {
+
+        &:not(:last-child) {
+          margin-bottom: toRem(20);
+        }
+      }
     }
 
     @include adaptiveValue("font-size", 36, 24, 0, 1026, 320); // Adaptive font size
@@ -59,14 +71,6 @@
     @media (min-width: toEm(600)) {
       max-width: toRem(400);
       padding-top: 10.893246%; /* 50/459 */
-    }
-
-    // media max-width: 599.98
-    @media (max-width: toEm(599.98)) {
-
-      &:not(:last-child) {
-        margin-bottom: toRem(20);
-      }
     }
   }
 
@@ -94,8 +98,6 @@
     height: 100%;
     object-fit: cover;
     border-radius: toRem(2.7);
-    position: relative;
-    z-index: 2;
 
     // Animation
     opacity: 0;
@@ -106,6 +108,12 @@
       transition: all 1s .1s;
       transform: translate(0, 0);
       opacity: 1;
+    }
+
+    // .hero__main-image-item
+    &-item {
+      position: relative;
+      z-index: 2;
     }
   }
 
@@ -123,8 +131,6 @@
 
   // .hero__circle-image
   &__circle-image {
-    position: relative;
-    z-index: 3;
     aspect-ratio: 1 / 1;
     width: 100%;
     height: 100%;
@@ -132,6 +138,26 @@
     object-fit: cover;
     border-radius: 50%;
     overflow: hidden;
+
+    // .hero__circle-image-item
+    &-item {
+      position: relative;
+      z-index: 3;
+
+      // media min-width:600px
+      @media (min-width: toEm(600)) {
+
+        &:not(:last-child) {
+          margin-bottom: toRem(30);
+        }
+      }
+
+      // media max-width: 599.98
+      @media (max-width: toEm(599.98)) {
+        flex-shrink: 0;
+        flex-basis: toRem(100);
+      }
+    }
 
     // media min-width:600px
     @media (min-width: toEm(600)) {
@@ -142,68 +168,73 @@
         transform: translate(toRem(-65), 0) scale(1);
         transition: all 1s 1.5s;
       }
-
-      &:not(:last-child) {
-        margin-bottom: toRem(30);
-      }
     }
 
     // media max-width: 599.98
     @media (max-width: toEm(599.98)) {
-      flex-shrink: 0;
-      flex-basis: toRem(100);
+      transform: scale(0);
+
+      // .hero__circle-image._watcher-view
+      ._watcher-view & {
+        transform: scale(1);
+        transition: all 1s 1.5s;
+      }
     }
   }
 
   // .hero__deco
   &__deco {
-    position: absolute;
 
     // Animation
     transform: scale(0);
 
-    // .hero__deco--one
-    &--one {
-      aspect-ratio: 233 / 195;
-      top: -16.557734%; /* -76/459 */
-      right: -26.699029%; /* -110/412 */
-      max-width: 56.553398%; /* 233/412 */
-      transform-origin: left bottom;
-      transform: scale(0) rotate(-20deg);
+    // .hero__deco-item
+    &-item {
+      position: absolute;
 
+      // .hero__deco-item--one
+      &--one {
+        aspect-ratio: 233 / 195;
+        top: -16.557734%; /* -76/459 */
+        right: -26.699029%; /* -110/412 */
+        max-width: 56.553398%; /* 233/412 */
 
-      // .hero__deco--one._watcher-view
-      ._watcher-view & {
-        transform: scale(1) rotate(0);
-        transition: all 1.5s 1s;
+        // .hero__deco
+        .hero__deco {
+          transform-origin: left bottom;
+          transform: scale(0) rotate(-20deg);
+          // .hero__deco--one._watcher-view
+          ._watcher-view & {
+            transform: scale(1) rotate(0);
+            transition: all 1.5s 1s;
+          }
+        }
       }
-    }
 
-    // .hero__deco--two
-    &--two {
-      aspect-ratio: 239 / 278;
-      bottom: -31.154684%; /* -143/459 */
-      right: -21.116505%; /* -87/412 */
-      max-width: 58.009709%; /* 239/412 */
-      transform-origin: 0 0;
-      transform: scale(0) rotate(20deg);
+      // .hero__deco-item--two
+      &--two {
+        aspect-ratio: 239 / 278;
+        bottom: -31.154684%; /* -143/459 */
+        right: -21.116505%; /* -87/412 */
+        max-width: 58.009709%; /* 239/412 */
 
-      // .hero__deco--two._watcher-view
-      ._watcher-view & {
-        transform: scale(1) rotate(0);
-        transition: all 1.5s 1s;
+        // .hero__deco
+        .hero__deco {
+          transform-origin: left top;
+          transform: scale(0) rotate(20deg);
+
+          // .hero__deco--one._watcher-view
+          ._watcher-view & {
+            transform: scale(1) rotate(0);
+            transition: all 1.5s 1s;
+          }
+        }
       }
     }
   }
 
   // .hero__figure
   &__figure {
-    aspect-ratio: 197 / 197;
-    position: absolute;
-    bottom: -12.418301%; /* 57/459 */
-    left: -21.84466%; /* 90/412 */
-    max-width: 47.815534%; /* 197/412 */
-    
 
     // Animation
     transform-origin: top right;
@@ -213,6 +244,15 @@
     ._watcher-view & {
       transform: scale(1) rotate(0);
       transition: all 1.5s 1s;
+    }
+
+    // .hero__figure-item
+    &-item {
+      aspect-ratio: 197 / 197;
+      position: absolute;
+      bottom: -12.418301%; /* 57/459 */
+      left: -21.84466%; /* 90/412 */
+      max-width: 47.815534%; /* 197/412 */
     }
   }
 

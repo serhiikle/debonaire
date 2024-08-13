@@ -14,11 +14,20 @@
     padding-top: toRem(37);
     padding-bottom: toRem(37);
 
-    // media 640px
-    @media (max-width: toEm(640)) {
+    // media max-width: 639.98px
+    @media (max-width: toEm(639.98)) {
       grid-template-columns: auto auto 1fr;
       padding-top: toRem(15);
       padding-bottom: toRem(15);
+    }
+
+    // media min-width: 640px
+    @media (min-width: toEm(640)) {
+      // ._header scroll add from plugin
+      ._header-scroll & {
+        padding-top: toRem(20);
+        padding-bottom: toRem(20);
+      }
     }
   }
 

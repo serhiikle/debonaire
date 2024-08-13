@@ -5,7 +5,13 @@
   &__hero {
 
   }
+
+  // .page__focused
+  &__focused {
+
+  }
 }
+
 //====================================================================================================
 
 .hero {
@@ -34,12 +40,6 @@
 
   // .hero__title
   &__title {
-    color: #fff;
-    font-family: "Lexend Deca";
-    font-style: normal;
-    line-height: 1.33; /* 48/36 */
-    letter-spacing: toRem(-1.5);
-    
 
     // animation
     opacity: 0;
@@ -258,7 +258,6 @@
 
   // .hero__text
   &__text {
-    line-height: 1.5; /* 24/16 */
 
     // Animation 
     transform: translate(-100%, 0);
@@ -281,5 +280,16 @@
   // media max-width: 599.98
   @media (max-width: toEm(599.98)) {
     align-self: center;
+  }
+}
+
+//====================================================================================================
+
+.focused {
+
+  // .focused__content
+  &__content {
+    @include adaptiveValue("padding-left", 50, 0, 2, $containerWidth, 992);
+    @include adaptiveValue("padding-rigth", 50, 0, 2, $containerWidth, 992);
   }
 }

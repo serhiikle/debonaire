@@ -1,6 +1,22 @@
 // Заголовки, загальні БЕМ блоки та інше...
 
-// Заклик до дії
+// Title component
+.title {
+  color: #fff;
+  font-family: "Lexend Deca";
+  font-style: normal;
+  line-height: 1.33; /* 48/36 */
+  letter-spacing: toRem(-1.5);
+
+  @include adaptiveValue("font-size", 36, 24, 0, 1026, 320); // Adaptive font size
+}
+
+// Text component
+.text {
+  line-height: 1.5; /* 24/16 */
+}
+
+// Action button
 .book {
   letter-spacing: toRem(-0.4);
   color: #fff;

@@ -286,10 +286,115 @@
 //====================================================================================================
 
 .focused {
+  position: relative;
+  padding-bottom: toRem(180);
+
+  // .focused__container
+  &__container {
+
+  }
 
   // .focused__content
   &__content {
-    @include adaptiveValue("padding-left", 50, 0, 2, $containerWidth, 992);
-    @include adaptiveValue("padding-rigth", 50, 0, 2, $containerWidth, 992);
+    position: relative;
+    display: flex;
+    align-items: start;
+    max-width: toRem(1240);
+    margin: 0 auto;
+    justify-content: space-between;
+
+    @include adaptiveValue("gap", 80, 25, 0, $containerWidth, 991.98);
+
+    // @include adaptiveValue("padding-left", 50, 0, 2, $containerWidth, 992);
+    // @include adaptiveValue("padding-rigth", 50, 0, 2, $containerWidth, 992);
+  }
+
+  // .focused__picture
+  &__picture {
+    position: relative;
+
+    // .focused__picture--star
+    &--start {
+      max-width: toRem(312);
+    }
+
+    // .focused__picture--end
+    &--end {
+      max-width: toRem(365);
+      align-self: flex-end;
+      transform: translate(0, 58.301887%); /* 309/530 */
+    }
+  }
+
+  // .focused__image
+  &__image {
+    width: 100%;
+    position: relative;
+    z-index: 2; 
+  }
+
+  // .focused__body
+  &__body {
+    position: relative;
+    z-index: 2;
+
+    @include adaptiveValue("padding-top", 140, 20);
+  }
+
+  // /focused__title
+  &__title {
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 20, 10);
+    }
+  }
+
+  // .focused__text
+  &__text {
+    max-width: toRem(390);
+
+    > p {
+
+      &:not(:last-child) {
+        margin-bottom: toRem(10);
+      }
+    }
+  }
+
+  // .focused__decor-items
+  &__decor-items {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  // .focused__decor-items
+  &__decor-item {
+    position: absolute;
+
+    // .focused__decor-item--start
+    &--start {
+      left: 0;
+      bottom: 0;
+      width: 110.897436%; /* 346/312 */
+      transform: translate(-47.976879%, 31.578947%); /* -166/346 || 108/342 */
+      aspect-ratio: 346 / 342;
+    }
+
+    // .focused__decor-item--end
+    &--end {
+      left: 0;
+      transform: translate(66.260163%, 0); /* 326/492 */
+      width: 134.794521%; /* 492/365 */
+      aspect-ratio: 492 / 369;
+    }
+  }
+
+  // .focused__decor-value
+  &__decor-value {
+    width: 100%;
+    height: 100%;
   }
 }

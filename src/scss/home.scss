@@ -1,16 +1,4 @@
 //====================================================================================================
-.page {
-
-  // .page__hero
-  &__hero {
-
-  }
-
-  // .page__focused
-  &__focused {
-
-  }
-}
 
 //====================================================================================================
 
@@ -287,12 +275,7 @@
 
 .focused {
   position: relative;
-  padding-bottom: toRem(180);
-
-  // .focused__container
-  &__container {
-
-  }
+  padding-bottom: toRem(40);
 
   // .focused__content
   &__content {
@@ -322,7 +305,7 @@
     &--end {
       max-width: toRem(365);
       align-self: flex-end;
-      transform: translate(0, 58.301887%); /* 309/530 */
+      transform: translate(0, 32.075472%); /* 170/530 */
     }
   }
 
@@ -373,6 +356,13 @@
   // .focused__decor-items
   &__decor-item {
     position: absolute;
+    stroke-dasharray: 1500;
+    stroke-dashoffset: 1500;
+
+    &._watcher-view {
+      transition: all 2s linear .1s;
+      stroke-dashoffset: 0;
+    }
 
     // .focused__decor-item--start
     &--start {
@@ -386,7 +376,8 @@
     // .focused__decor-item--end
     &--end {
       left: 0;
-      transform: translate(66.260163%, 0); /* 326/492 */
+      top: 0;
+      transform: translate(-66.260163%, 21.95122%); /* -326/492 || 81/369 */
       width: 134.794521%; /* 492/365 */
       aspect-ratio: 492 / 369;
     }

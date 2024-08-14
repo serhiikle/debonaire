@@ -9,6 +9,12 @@
   letter-spacing: toRem(-1.5);
 
   @include adaptiveValue("font-size", 36, 24, 0, 1026, 320); // Adaptive font size
+
+  // .title--big
+  &--big {
+    line-height: 1.1; /* 66/60 */
+    @include adaptiveValue("font-size", 60, 36, 0, 1026, 320); // Adaptive font size
+  }
 }
 
 // Text component

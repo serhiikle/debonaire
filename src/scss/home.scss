@@ -1,7 +1,3 @@
-//====================================================================================================
-
-//====================================================================================================
-
 .hero {
   padding-top: toRem(65);
   padding-bottom: toRem(143);
@@ -409,5 +405,47 @@
   &__decor-value {
     width: 100%;
     height: 100%;
+  }
+}
+
+//====================================================================================================
+
+.love {
+  background-color: #c5cebd;
+  padding-block: toRem(150);
+
+  // .love__content
+  &__content {
+    max-width: toRem(1440);
+    margin: 0 auto;
+    display: flex;
+  }
+
+  // .love__picture
+  &__picture {
+    position: relative;
+    flex: 1 1 38.75%; /* 558/1440 */
+  }
+
+  // .love__image
+  &__image {
+    border-radius: toRem(5);
+  }
+
+  // .love__decor-picture
+  &__decor-picture {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  // .love__body
+  &__body {
+    flex: 1 1 auto;
+  }
+
+  // .love__decor
+  &__decor {
+    flex: 0 1 27.083333%; /* 390/1440 */
   }
 }

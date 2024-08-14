@@ -48,10 +48,10 @@
 					</section>
 
 					<!-- section FOCUSED -->
-					<section data-prlx-parent class="page__focused focused">
+					<section class="page__focused focused">
 						<div class="focused__container">
 							<div class="focused__content">
-								<div data-watch class="focused__picture focused__picture--start">
+								<div data-prlx-parent data-watch class="focused__picture focused__picture--start">
 									<img data-prlx data-coefficient="3" class="focused__image" src="@img/focused/image-01.jpg" alt="Black women with flowers">
 									<div data-watch class="focused__decor-item focused__decor-item--start">
 										<svg class="focused__decor-value" viewBox="0 0 348 344" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -59,17 +59,17 @@
 										</svg>
 									</div>
 								</div>
-								<div data-prlx class="focused__body">
-									<h2 class="focused__title title">
+								<div data-prlx-parent class="focused__body">
+									<h2 data-prlx class="focused__title title">
 										We’re focused.
 									</h2>
-									<div class="focused__text text">
+									<div data-prlx class="focused__text text">
 										<p>
 											We provide an exceptional service by only focusing on hair designing. Our goal is to provide a different type of experience by using responsible products.
 										</p>
 									</div>
 								</div>
-								<div class="focused__picture focused__picture--end">
+								<div data-prlx-parent class="focused__picture focused__picture--end">
 									<img data-prlx data-coefficient="2" class="focused__image" src="@img/focused/image-02.jpg" alt="Photo of decoration plant">
 									<div data-watch class="focused__decor-item focused__decor-item--end">
 										<svg class="focused__decor-value" viewBox="0 0 494 371" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -82,25 +82,38 @@
 					</section>
 
 					<!-- section LOVE -->
-					 <section data-prlx-parent class="page__love love">
+					 <section class="page__love love">
 						<div class="love__content">
-							<div class="love__picture">
-								<img class="love__image" src="@img/love/image-01.jpg" alt="White&black photo of girl">
-								<img class="love__decor-picture" src="@img/love/deco-02.svg" alt="Abstract image">
+							<div data-prlx-parent class="love__picture">
+								<img data-prlx data-coefficient="2" class="love__image" src="@img/love/image-01.jpg" alt="White&black photo of girl">
+								<div data-prlx-parent class="love__decor-picture">
+									<img data-prlx class="love__item-decor-picture" src="@img/love/deco-02.svg" alt="Abstract image">
+								</div>
 							</div>
-							<div class="love__body">
-								<h2 class="love__title title title--big">
+							<div data-prlx-parent class="love__body">
+								<h2 data-prlx class="love__title title title--big">
 									We love what we do. We are up to the task.
 								</h2>
-							</div>
-							<div class="love__decor decor-love">
-								<div class="decor-love__line-item">
-									<svg class="decor-love__item" viewBox="0 0 525 531" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path fill-rule="evenodd" clip-rule="evenodd" d="M522.939 318.288C513.011 82.4158 169.018 -117.959 33.3202 85.9218C-102.378 289.803 234.141 211.383 284.888 407.672C335.635 603.961 532.867 554.161 522.939 318.288Z" stroke="#E6E6E6" stroke-width="2"/>
-									</svg>
+								<div data-prlx class="love__text text">
+									<p>
+										Cuts tailor made for your hair, making it easy for you to recreate your look every day. Debonaire team, makes you feel happy at ease and work with you to make you your most lovely.
+									</p>
 								</div>
-								<img class="decor-love__hair" src="@img/love/image-02.jpg" alt="Photo of black hair">
-								<img class="decor-love__dryer" src="@img/love/image-03.jpg" alt="Photo of silver dryer on pink background">
+							</div>
+							<div data-prlx-parent class="love__decor decor-love">
+								<div class="decor-love__body">
+									<div data-prlx data-coefficient="2.5" class="decor-love__line-item">
+										<svg data-watch class="decor-love__line" viewBox="0 0 525 531" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M522.939 318.288C513.011 82.4158 169.018 -117.959 33.3202 85.9218C-102.378 289.803 234.141 211.383 284.888 407.672C335.635 603.961 532.867 554.161 522.939 318.288Z" stroke="#E6E6E6" stroke-width="2"/>
+										</svg>
+									</div>
+									<div class="decor-love__hair-item">
+										<img data-prlx data-coefficient="1.8" class="decor-love__hair" src="@img/love/image-03.jpg" alt="Photo of black hair">
+									</div>
+									<div class="decor-love__dryer-item">
+										<img data-prlx data-coefficient="1.3" class="decor-love__dryer" src="@img/love/image-02.jpg" alt="Photo of silver dryer on pink background">
+									</div>
+								</div>
 							</div>
 						</div>
 					 </section>

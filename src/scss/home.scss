@@ -285,27 +285,44 @@
     max-width: toRem(1240);
     margin: 0 auto;
     justify-content: space-between;
+    row-gap: toRem(50);
 
-    @include adaptiveValue("gap", 80, 25, 0, $containerWidth, 991.98);
+    @include adaptiveValue("column-gap", 80, 25, 0, $containerWidth, 991.98);
 
-    // @include adaptiveValue("padding-left", 50, 0, 2, $containerWidth, 992);
-    // @include adaptiveValue("padding-rigth", 50, 0, 2, $containerWidth, 992);
+    // @media max-width: 991.98px
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   // .focused__picture
   &__picture {
     position: relative;
+    width: 100%;
 
     // .focused__picture--star
     &--start {
-      max-width: toRem(312);
+      
+      // @media min-width 600px
+      @media (min-width: toEm(600)) {
+        max-width: toRem(312);
+      }
     }
 
     // .focused__picture--end
     &--end {
-      max-width: toRem(365);
-      align-self: flex-end;
-      transform: translate(0, 32.075472%); /* 170/530 */
+
+      // @media min-width: 991.98px
+      @media (min-width: $mobile) {
+        align-self: flex-end;
+        transform: translate(0, 32.075472%); /* 170/530 */
+      }
+
+      // @media min-width 600px
+      @media (min-width: toEm(600)) {
+        max-width: toRem(365);
+      }
     }
   }
 
@@ -313,7 +330,8 @@
   &__image {
     width: 100%;
     position: relative;
-    z-index: 2; 
+    z-index: 2;
+    border-radius: toRem(5);
   }
 
   // .focused__body
@@ -334,13 +352,17 @@
 
   // .focused__text
   &__text {
-    max-width: toRem(390);
 
     > p {
 
       &:not(:last-child) {
         margin-bottom: toRem(10);
       }
+    }
+
+    // @media min-width $mobile
+    @media (min-width: $mobile) {
+      max-width: toRem(390);
     }
   }
 

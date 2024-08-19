@@ -7,6 +7,7 @@
   font-style: normal;
   line-height: 1.2; /* 48/40 */
   letter-spacing: toRem(-1.5);
+  transition: color .3s;
 
   @include adaptiveValue("font-size", 40, 24, 0, 1026, 320); // Adaptive font size
 
